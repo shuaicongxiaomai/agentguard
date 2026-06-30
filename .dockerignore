@@ -1,0 +1,10 @@
+.git
+.github
+*.exe
+agentguard
+agentguard.exe
+.idea
+.vscode
+.DS_Store
+README.md
+CLAUDE.md

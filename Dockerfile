@@ -1,0 +1,15 @@
+# Build stage
+FROM golang:1.25-alpine AS build
+WORKDIR /src
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+ARG VERSION=dev
+RUN CGO_ENABLED=0 go build -trimpath -ldflags "-s -w" -o /out/agentguard .
+
+# Final stage — minimal image, stdio MCP server by default
+FROM gcr.io/distroless/static-debian12:nonroot
+# The MCP Registry verifies ownership via this label; it MUST match `name` in server.json.
+LABEL io.modelcontextprotocol.server.name="io.github.shuaicongxiaomai/agentguard"
+COPY --from=build /out/agentguard /agentguard
+ENTRYPOINT ["/agentguard"]

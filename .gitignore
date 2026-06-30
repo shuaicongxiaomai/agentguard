@@ -1,0 +1,9 @@
+# compiled binary
+/agentguard
+/agentguard.exe
+*.exe
+
+# editor / OS
+.DS_Store
+.idea/
+.vscode/

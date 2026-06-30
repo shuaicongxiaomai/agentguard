@@ -1,0 +1,20 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.shuaicongxiaomai/agentguard",
+  "title": "AgentGuard — security checks for AI agents",
+  "description": "Security checks in the loop for AI agents: scan text/code for hard-coded secrets, check a package version for known CVEs, and scan a go.mod/package.json/requirements.txt for vulnerable dependencies. Free, no API key (CVE data from OSV.dev).",
+  "repository": {
+    "url": "https://github.com/shuaicongxiaomai/agentguard",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "oci",
+      "identifier": "ghcr.io/shuaicongxiaomai/agentguard:0.1.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
