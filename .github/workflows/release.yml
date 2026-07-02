@@ -72,7 +72,15 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
+          # No provenance/SBOM attestations: they add `unknown/unknown` manifests
+          # to the index that break the MCP Registry's OCI ownership check.
+          provenance: false
+          sbom: false
           build-args: VERSION=${{ steps.ver.outputs.version }}
+          # The registry reads the ownership marker from the image; set it at the
+          # index + manifest level (annotation) in addition to the Dockerfile LABEL.
+          annotations: |
+            manifest,index:io.modelcontextprotocol.server.name=io.github.shuaicongxiaomai/agentguard
           tags: |
             ${{ env.IMAGE }}:${{ steps.ver.outputs.version }}
             ${{ env.IMAGE }}:latest

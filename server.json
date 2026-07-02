@@ -7,11 +7,11 @@
     "url": "https://github.com/shuaicongxiaomai/agentguard",
     "source": "github"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "packages": [
     {
       "registryType": "oci",
-      "identifier": "ghcr.io/shuaicongxiaomai/agentguard:0.1.0",
+      "identifier": "ghcr.io/shuaicongxiaomai/agentguard:0.1.1",
       "transport": {
         "type": "stdio"
       }

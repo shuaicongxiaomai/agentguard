@@ -22,7 +22,7 @@ import (
 	"github.com/modelcontextprotocol/go-sdk/mcp"
 )
 
-const version = "0.1.0"
+const version = "0.1.1"
 
 // --- tool I/O types (JSON schema is generated from these) ---
 
